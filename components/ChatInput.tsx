@@ -23,10 +23,10 @@ export default function ChatInput({ onSend }: any) {
         placeholder="Ketik pesan kamu..."
       />
 
-      {/* tombol kanan */}
+      {/* tombol kirim */}
       <button className="send-btn" onClick={handleSend}>
         ↑
       </button>
     </div>
   );
-      }
+}
