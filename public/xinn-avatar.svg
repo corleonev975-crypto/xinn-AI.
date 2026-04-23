@@ -1,0 +1,24 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(128 128) rotate(90) scale(128)">
+      <stop stop-color="#0E1330"/>
+      <stop offset="1" stop-color="#05070F"/>
+    </radialGradient>
+    <linearGradient id="stroke" x1="40" y1="36" x2="218" y2="222" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6EE7FF"/>
+      <stop offset="0.45" stop-color="#8A5BFF"/>
+      <stop offset="1" stop-color="#C972FF"/>
+    </linearGradient>
+    <filter id="glow" x="0" y="0" width="256" height="256" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="8" result="effect1_foregroundBlur_1_2"/>
+    </filter>
+  </defs>
+  <circle cx="128" cy="128" r="118" fill="url(#bg)" stroke="url(#stroke)" stroke-width="4"/>
+  <g filter="url(#glow)">
+    <path d="M78 66L117 66L145 106L177 66H214L165 127L218 190H179L145 149L114 190H77L125 128L78 66Z" fill="url(#stroke)"/>
+    <path d="M92 84H108L163 174H146L92 84Z" fill="white" fill-opacity="0.92"/>
+    <path d="M170 85H184L110 174H96L170 85Z" fill="white" fill-opacity="0.55"/>
+  </g>
+</svg>
