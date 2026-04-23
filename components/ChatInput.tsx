@@ -1,46 +1,32 @@
-'use client';
+"use client";
 
-import { FormEvent, useState } from 'react';
+import { useState } from "react";
 
-export default function ChatInput({
-  onSend,
-  loading,
-}: {
-  onSend: (value: string) => Promise<void> | void;
-  loading: boolean;
-}) {
-  const [value, setValue] = useState('');
+export default function ChatInput({ onSend }: any) {
+  const [input, setInput] = useState("");
 
-  const handleSubmit = async (event: FormEvent) => {
-    event.preventDefault();
-    const trimmed = value.trim();
-    if (!trimmed || loading) return;
-    setValue('');
-    await onSend(trimmed);
-  };
+  function handleSend() {
+    if (!input.trim()) return;
+    onSend(input);
+    setInput("");
+  }
 
   return (
-    <form className="chat-input-wrap glass-panel" onSubmit={handleSubmit}>
-      <div className="chat-input-toolbar">
-        <button type="button" className="tool-circle" aria-label="Tambah fitur">
-          +
-        </button>
-        <button type="button" className="tool-circle" aria-label="Internet mode">
-          ◌
-        </button>
-      </div>
+    <div className="input-box">
+      {/* tombol kiri */}
+      <button className="icon-btn">＋</button>
 
-      <textarea
-        rows={1}
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        className="chat-textarea"
+      {/* input */}
+      <input
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
         placeholder="Ketik pesan kamu..."
       />
 
-      <button type="submit" className="send-button" aria-label="Kirim" disabled={loading}>
+      {/* tombol kanan */}
+      <button className="send-btn" onClick={handleSend}>
         ↑
       </button>
-    </form>
+    </div>
   );
-}
+      }
